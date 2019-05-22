@@ -14,6 +14,7 @@ class YourBotArmy extends React.Component {
                 key={bot.id}
                 bot={bot}
                 handleBot={this.props.handleBot}
+                selectBot={this.props.selectBot}
               />
             ))}
           </div>

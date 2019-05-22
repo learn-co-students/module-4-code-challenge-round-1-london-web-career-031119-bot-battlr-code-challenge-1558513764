@@ -60,19 +60,13 @@ const BotSpecs = props => {
             </div>
             <button
               className="ui button fluid"
-              onClick={() =>
-                console.log('connect this to a function that shows all bots')
-              }
+              onClick={() => props.deselectBot()}
             >
               Go Back
             </button>
             <button
               className="ui button fluid"
-              onClick={() =>
-                console.log(
-                  "connect this to a function that adds this bot to your bot army list"
-                )
-              }
+              onClick={() => props.handleBot(bot)}
             >
               Enlist
             </button>
@@ -81,7 +75,6 @@ const BotSpecs = props => {
       </div>
     </div>
   );
-
 };
 
 export default BotSpecs;

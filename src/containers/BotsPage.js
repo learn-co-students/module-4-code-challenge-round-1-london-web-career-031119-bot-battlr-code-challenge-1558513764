@@ -31,14 +31,23 @@ class BotsPage extends React.Component {
     }
   };
 
+  selectBot = bot => {
+    if (bot !== this.state.selectedBot) {
+      this.setState({ selectedBot: bot });
+    } else if (bot == this.state.selectedBot) {
+      this.removeFromYourBots(bot);
+    }
+  };
+
   render() {
     return (
       <div>
-        <BotCollection bots={this.state.bots} handleBot={this.addToYourBots} />
         <YourBotArmy
           bots={this.state.yourBots}
           handleBot={this.removeFromYourBots}
+          selectBot={this.selectBot}
         />
+        <BotCollection bots={this.state.bots} handleBot={this.addToYourBots} />
       </div>
     );
   }
